@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+body{
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    background-color: #eeeeee ;
+    width: 100%;
+    margin: 0;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+html, body { height: 100%; }
+
+:root{
+    --primary-color: #f44336;;
+    --primary-color-rgb: 244, 67, 54;
+    --secondary-color: #161c2d;
+    --secondary-color-rgb: 22, 28, 45;
+    --tertiary-color: #fff;
+    --tertiary-color-rgb: 255, 255, 255;
+    --success-color: #28A745;
+    --success-color-rgb: 41, 168, 71;
+    --danger-color: #DC3444;
+    --danger-color-rgb: 220, 52, 68;
+}
+
+@mixin form-input{
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    border: 0;
+    padding: 10px;
+}
+
+input{
+    @include form-input;
+    height: 30px;
+}
+
+textarea{
+    @include form-input;
+}

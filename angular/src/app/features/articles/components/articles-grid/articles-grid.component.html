@@ -1,0 +1,11 @@
+<div class="container">
+    <app-article-card 
+        *ngFor="let article of articles" 
+        [title]="article.title" 
+        [description]="article.description"
+        [published_at]="article.published_at"
+    >
+    </app-article-card>
+    <div *ngIf="(articles) == null || (articles)?.length == 0" id="no-articles">Articles not available</div>
+    <app-laravel-pagination *ngIf="pagination != undefined" [pagination]="pagination" (changePage)="changePage($event)"></app-laravel-pagination>
+</div>

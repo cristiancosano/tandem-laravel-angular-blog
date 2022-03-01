@@ -1,0 +1,19 @@
+form{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+.error{
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: red;
+    margin-top: 0.8rem;
+}
+
+.error::before{
+    content: 'Error: ';
+    display: inline;
+}

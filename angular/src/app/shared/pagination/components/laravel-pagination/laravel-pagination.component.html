@@ -1,0 +1,12 @@
+<ul *ngIf="pagination !== undefined">
+    <!-- <li (click)="getPage(1)">1</li> -->
+
+    <ng-container *ngFor="let page of pages">
+        <li (click)="getPage(page)" [ngClass]="{active: pagination.current_page == page}" *ngIf="page != 0;else dots">{{page}}</li>
+        <ng-template #dots>
+            <li>...</li>
+        </ng-template>
+    </ng-container>
+    <!-- <li (click)="getPage(pagination.last_page)">{{pagination.last_page}}</li> -->
+
+</ul>

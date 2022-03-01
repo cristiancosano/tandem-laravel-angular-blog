@@ -1,0 +1,46 @@
+<form [formGroup]="createArticleForm" (ngSubmit)="onSubmit(createArticleForm.value)">
+    <div class="container">
+        <app-alert-default *ngIf="httpStatus" [message]="httpStatus.message" [color]="httpStatus.color"></app-alert-default>
+        <h1>Create new article</h1>
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" formControlName="title" [ngClass]="{'input-error': title?.invalid && (title?.dirty || title?.touched || submitedWithErrors) }">
+            <div *ngIf="title?.invalid && (title?.dirty || title?.touched || submitedWithErrors)">
+                <div *ngIf="title?.errors?.['required'] " class="error">
+                    Name is required.
+                </div>
+                <div *ngIf="title?.errors?.['minlength']" class="error">
+                    Name must have at least {{title?.errors?.['minlength'].requiredLength}} characters. {{title?.errors?.['minlength'].actualLength}} characters typed.
+                </div>
+                <div *ngIf="title?.errors?.['maxlength']" class="error">
+                    Name must have maximum {{title?.errors?.['maxlength'].requiredLength}} characters. {{title?.errors?.['maxlength'].actualLength}} characters typed.
+                </div>
+            </div>
+        </div>
+    
+        <div>
+            <label for="description">Description</label>
+            <textarea id="description" formControlName="description" cols="30" rows="10" [ngClass]="{'input-error': description?.invalid && (description?.dirty || description?.touched || submitedWithErrors) }"></textarea>
+            <div *ngIf="description?.invalid && (description?.dirty || description?.touched || submitedWithErrors)">
+                <div *ngIf="description?.errors?.['required']" class="error">
+                    Description is required.
+                </div>
+                <div *ngIf="description?.errors?.['minlength']" class="error">
+                    Description must have at least {{description?.errors?.['minlength'].requiredLength}} characters. {{description?.errors?.['minlength'].actualLength}} characters typed.
+                </div>
+            </div>
+        </div>
+        
+        <app-button-default type="submit">
+            <mat-icon>add</mat-icon>
+            <span>Create article</span>
+        </app-button-default>
+
+        <app-button-default (click)="fillForm()" *ngIf="!production" color="secondary">
+            <mat-icon>create</mat-icon>
+            <span>Fill fields (development only)</span>
+        </app-button-default>
+    
+    
+    </div>
+</form>

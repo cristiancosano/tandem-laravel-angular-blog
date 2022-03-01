@@ -1,0 +1,38 @@
+footer{
+    background-color: #292E32;
+    color: rgb(204, 203, 203);
+    height: 100px;
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+#social-networks{
+    text-align: right;
+    font-size: 1.8rem;
+    width: 100%;
+    & i{
+        color: #cccbcb;
+        padding: 0.5rem;
+    }
+}
+#copyright{
+    width: 50%;
+}
+
+#github:hover{
+    color: #6E5494!important;
+}
+
+#twitter:hover{
+    color: #08A6E6!important;
+}
+
+#linkedin:hover{
+    color: #0e76a8!important;
+}

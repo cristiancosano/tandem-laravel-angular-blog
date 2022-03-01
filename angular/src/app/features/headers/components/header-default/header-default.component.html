@@ -1,0 +1,18 @@
+<div id="header">
+    <div class="always-front">
+        <nav>
+            <div class="container">
+                <div>
+                    <img src="/assets/logo.png" [routerLink]="'/'">
+                </div>
+                <mat-icon (click)="toggle()">menu</mat-icon>
+                <ul [ngClass]="{mobileHideMenu}">
+                    <li><a [routerLink]="'/'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+                    <li *ngIf="loggedIn"><a [routerLink]="'/create-article'" routerLinkActive="active">Create Article</a></li>
+                    <li *ngIf="!loggedIn"><a [routerLink]="'/login'" routerLinkActive="active">Login</a></li>
+                    <li *ngIf="loggedIn" (click)="logout()">Logout</li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

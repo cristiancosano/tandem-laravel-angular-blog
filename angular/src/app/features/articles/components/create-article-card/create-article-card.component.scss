@@ -1,0 +1,49 @@
+.container{
+    min-height: calc(100vh - 170px);
+}
+
+label{
+    display: block;
+    margin-top: 2rem;
+}
+
+@mixin input-mixin{
+    margin-top: 0.5rem;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgb(139, 139, 139);
+}
+
+input{
+    @include input-mixin();
+}
+
+textarea{
+    @include input-mixin();
+    resize: none;
+}
+
+.error{
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.input-error{
+    border: 1px solid red;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+app-alert-default:first-child{
+    display: block;
+    margin-top: 1.5rem;
+}
+
+app-button-default{
+    display: block;
+    margin-bottom: 1.5rem;
+}
