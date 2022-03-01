@@ -10,6 +10,7 @@ export class ArticleCardComponent implements OnInit {
   @Input() title = '';
   @Input() description = '';
   @Input() published_at = '';
+  @Input() author = '';
 
   constructor() { }
 

@@ -4,6 +4,7 @@
         [title]="article.title" 
         [description]="article.description"
         [published_at]="article.published_at"
+        [author]="article.author.name"
     >
     </app-article-card>
     <div *ngIf="(articles) == null || (articles)?.length == 0" id="no-articles">Articles not available</div>

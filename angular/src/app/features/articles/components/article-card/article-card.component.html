@@ -1,5 +1,9 @@
 <div id="card">
     <h1>{{title}}</h1>
-    <time [dateTime]="published_at">{{published_at | date:'short'}}</time>
+    <span id="subtitle">
+        <time [dateTime]="published_at">{{published_at | date:'short'}}</time>
+        -
+        {{author}}
+    </span>
     <p>{{description}}</p>
 </div>
